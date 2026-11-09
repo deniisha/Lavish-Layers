@@ -63,3 +63,29 @@ lightbox.addEventListener("click", event => {
         lightbox.classList.remove("show");
     }
 });
+
+// Consultation Form - WhatsApp
+document.getElementById("consultation-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("customer-name").value;
+    const phone = document.getElementById("customer-phone").value;
+    const room = document.getElementById("room-type").value;
+    const message = document.getElementById("customer-message").value;
+
+    const whatsappNumber = "918839333464";
+
+    const whatsappMessage =
+        `Hello Lavish Layers! I want a free consultation.
+
+Name: ${name}
+Phone: ${phone}
+Room Type: ${room}
+Requirements: ${message}`;
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+});
